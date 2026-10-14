@@ -1,0 +1,79 @@
+{
+  "schema_version": "2.0",
+  "scanner_version": "0.2.0",
+  "rules_version": "aws-env-v1",
+  "reference_snapshot_oid": "21af4dc2e48a4a8731d1057335d867e7a75c4273",
+  "scope": {
+    "history": "ancestors_of_reference_including_merged_parents",
+    "files": "basename .env or .env.*; UTF-8; regular Git blobs",
+    "uncommitted_files": false,
+    "max_blob_bytes": 1048576
+  },
+  "fingerprint": {
+    "algorithm": "SHA-256",
+    "scheme": "location-v1",
+    "identity": "commit_path_lines_masked_components",
+    "raw_values_included": false
+  },
+  "coverage": {
+    "commits_scanned": 3,
+    "env_blob_occurrences": 3,
+    "unique_env_blobs_considered": 2,
+    "unique_env_blobs_read": 2,
+    "out_of_scope_file_occurrences": 3,
+    "complete_for_scope": true,
+    "reference_env_complete": true,
+    "skipped": [],
+    "parse_warnings": []
+  },
+  "summary": {
+    "candidate_records": 1,
+    "decisions": {
+      "SUSPECTED_SECRET": 1
+    },
+    "alerts": 1
+  },
+  "candidates": [
+    {
+      "path": ".env",
+      "commit_oid": "0138546bf448cc2a19175f95b1b11d6ae9e5a17e",
+      "category": "AWS credentials",
+      "kind": "aws_pair",
+      "line_start": 2,
+      "line_end": 3,
+      "components": [
+        {
+          "field": "AWS_ACCESS_KEY_ID",
+          "line": 2,
+          "masked_value": "[REDACTED]"
+        },
+        {
+          "field": "AWS_SECRET_ACCESS_KEY",
+          "line": 3,
+          "masked_value": "[REDACTED]"
+        }
+      ],
+      "status": "SUSPECTED_SECRET",
+      "reason": "literal_aws_pair",
+      "activity_status": "UNKNOWN",
+      "features": {
+        "has_id": 1,
+        "has_secret": 1,
+        "line_distance": 1,
+        "commented_bindings": 0,
+        "ambiguous": 0,
+        "id_length": 20,
+        "id_entropy": 3.6842,
+        "secret_length": 40,
+        "secret_entropy": 5.0219
+      },
+      "fingerprint": "fa6597db909e32fc4daba32e56013d1bfa8f29812ddec101133e659e69d57645",
+      "blob_oid": "8b1e97801992ac553c2b7cd3a7b88b42ac381fcd",
+      "commits": [
+        "0138546bf448cc2a19175f95b1b11d6ae9e5a17e"
+      ],
+      "location_in_reference_snapshot": false,
+      "absent_from_reference_env": true
+    }
+  ]
+}

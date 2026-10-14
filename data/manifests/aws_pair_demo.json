@@ -1,0 +1,18 @@
+{
+  "repository": "tests/synthetic_histories/generated/aws_pair_demo",
+  "synthetic": true,
+  "commits": {
+    "initial": "a8d14c53fd0406a35650fc55550ded9d751c9e8a",
+    "pair_added": "0138546bf448cc2a19175f95b1b11d6ae9e5a17e",
+    "pair_removed": "21af4dc2e48a4a8731d1057335d867e7a75c4273"
+  },
+  "expected": {
+    "path": ".env",
+    "line_start": 2,
+    "line_end": 3,
+    "suspected_pair_records": 1,
+    "absent_from_reference_env": true,
+    "fingerprint": "fa6597db909e32fc4daba32e56013d1bfa8f29812ddec101133e659e69d57645",
+    "fingerprint_scheme": "location-v1"
+  }
+}

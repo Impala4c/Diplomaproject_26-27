@@ -1,0 +1,116 @@
+{
+  "measured_at_utc": "2026-10-13T22:09:16.399350+00:00",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "clock": "perf_counter; elapsed wall time; operating-system caches not cleared",
+  "network_validation": false,
+  "runs": [
+    {
+      "repository": "python-dotenv",
+      "reference_oid": "0b2880591780a426b0551436f47a17e7a76d954f",
+      "local_refs": 61,
+      "repetition": 1,
+      "elapsed_seconds": 55.275,
+      "commits_per_second": 8.105,
+      "coverage": {
+        "commits_scanned": 448,
+        "commits_available": 448,
+        "history_truncated": false,
+        "blob_occurrences": 12353,
+        "unique_blobs_considered": 947,
+        "unique_blobs_read": 947,
+        "bytes_read": 4828540,
+        "out_of_scope_file_occurrences": 0,
+        "complete_for_scope": false,
+        "reference_snapshot_complete": false,
+        "reference_env_complete": false
+      },
+      "skipped_unique_locations_by_reason": {
+        "non_regular_file": 4
+      },
+      "parse_warning_locations": 5,
+      "summary": {
+        "candidate_records": 0,
+        "decisions": {},
+        "alerts": 0
+      },
+      "unique_candidate_blob_locations": 0,
+      "unique_alert_blob_locations": 0,
+      "report_file": "python-dotenv.run1.json"
+    },
+    {
+      "repository": "aws-cli",
+      "reference_oid": "bfe9174518734e68f7cc224f36d133c183454430",
+      "local_refs": 3633,
+      "repetition": 1,
+      "elapsed_seconds": 375.111,
+      "commits_per_second": 2.666,
+      "coverage": {
+        "commits_scanned": 1000,
+        "commits_available": 17829,
+        "history_truncated": true,
+        "blob_occurrences": 11008765,
+        "unique_blobs_considered": 18988,
+        "unique_blobs_read": 18223,
+        "bytes_read": 701317365,
+        "out_of_scope_file_occurrences": 0,
+        "complete_for_scope": false,
+        "reference_snapshot_complete": false,
+        "reference_env_complete": false
+      },
+      "skipped_unique_locations_by_reason": {
+        "blob_size_limit": 765,
+        "binary_or_utf16_not_supported": 10
+      },
+      "parse_warning_locations": 5,
+      "summary": {
+        "candidate_records": 6000,
+        "decisions": {
+          "SUSPECTED_SECRET": 3000,
+          "UNCERTAIN": 3000
+        },
+        "alerts": 6000
+      },
+      "unique_candidate_blob_locations": 6,
+      "unique_alert_blob_locations": 6,
+      "report_file": "aws-cli.run1.json"
+    },
+    {
+      "repository": "github-cli",
+      "reference_oid": "d6b82b12e67d108b7c82d76d943a3a47814acbc1",
+      "local_refs": 481,
+      "repetition": 1,
+      "elapsed_seconds": 129.402,
+      "commits_per_second": 7.728,
+      "coverage": {
+        "commits_scanned": 1000,
+        "commits_available": 12264,
+        "history_truncated": true,
+        "blob_occurrences": 1338400,
+        "unique_blobs_considered": 4369,
+        "unique_blobs_read": 4368,
+        "bytes_read": 64253063,
+        "out_of_scope_file_occurrences": 0,
+        "complete_for_scope": false,
+        "reference_snapshot_complete": false,
+        "reference_env_complete": false
+      },
+      "skipped_unique_locations_by_reason": {
+        "binary_or_utf16_not_supported": 54,
+        "non_utf8_not_supported": 1,
+        "blob_size_limit": 1
+      },
+      "parse_warning_locations": 441,
+      "summary": {
+        "candidate_records": 13059,
+        "decisions": {
+          "UNCERTAIN": 13059
+        },
+        "alerts": 13059
+      },
+      "unique_candidate_blob_locations": 359,
+      "unique_alert_blob_locations": 359,
+      "report_file": "github-cli.run1.json"
+    }
+  ]
+}

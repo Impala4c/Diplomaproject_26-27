@@ -1,0 +1,32 @@
+name: tests-and-secret-scan
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -B -m unittest discover -v
+      - run: python -B scripts/verify_demo.py --create
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - run: python -B scripts/scan_history.py . --all-refs --max-blob-bytes 33554432 --exclude "docs/planning/roadmap 1.pdf" --exclude "docs/research/12-15_october_research/00_main.docx" --output reports/ci.json --sarif reports/ci.sarif

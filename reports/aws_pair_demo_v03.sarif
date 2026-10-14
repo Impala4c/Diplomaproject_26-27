@@ -1,0 +1,105 @@
+{
+  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "secret-history",
+          "version": "0.3.0",
+          "rules": [
+            {
+              "id": "aws",
+              "name": "AWScredentials",
+              "shortDescription": {
+                "text": "AWS credentials"
+              }
+            },
+            {
+              "id": "github",
+              "name": "GitHubtoken",
+              "shortDescription": {
+                "text": "GitHub token"
+              }
+            },
+            {
+              "id": "pem",
+              "name": "PEMprivatekey",
+              "shortDescription": {
+                "text": "PEM private key"
+              }
+            },
+            {
+              "id": "slack",
+              "name": "Slacktoken",
+              "shortDescription": {
+                "text": "Slack token"
+              }
+            },
+            {
+              "id": "google",
+              "name": "GoogleAPIkey",
+              "shortDescription": {
+                "text": "Google API key"
+              }
+            }
+          ]
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "aws",
+          "level": "warning",
+          "message": {
+            "text": "literal_aws_pair; value [REDACTED]; validity UNKNOWN"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": ".env"
+                },
+                "region": {
+                  "startLine": 2,
+                  "endLine": 3
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "secretHistory/location-v1": "fa6597db909e32fc4daba32e56013d1bfa8f29812ddec101133e659e69d57645"
+          },
+          "properties": {
+            "commit_oid": "0138546bf448cc2a19175f95b1b11d6ae9e5a17e",
+            "status": "SUSPECTED_SECRET",
+            "location_in_reference_snapshot": false
+          }
+        }
+      ],
+      "properties": {
+        "reference_snapshot_oid": "21af4dc2e48a4a8731d1057335d867e7a75c4273",
+        "scope": {
+          "mode": "history",
+          "history": "ancestors_of_reference_including_merged_parents",
+          "files": "UTF-8 regular Git blobs; AWS restricted to .env and .env.*",
+          "detectors": [
+            "aws",
+            "github",
+            "pem",
+            "slack",
+            "google"
+          ],
+          "excluded_path_globs": [],
+          "uncommitted_files": false,
+          "max_blob_bytes": 1048576,
+          "max_commits": null
+        }
+      }
+    }
+  ]
+}

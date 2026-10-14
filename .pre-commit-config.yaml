@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: secret-history
+        name: Scan staged Git blobs for credential candidates
+        entry: python -B scripts/scan_history.py . --staged --detectors all --max-blob-bytes 33554432 --exclude "docs/planning/roadmap 1.pdf" --exclude "docs/research/12-15_october_research/00_main.docx"
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
